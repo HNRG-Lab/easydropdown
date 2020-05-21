@@ -1,5 +1,5 @@
 function getIsMobilePlatform(userAgent: string): boolean {
-    const isIos = /(ipad|iphone|ipod)/gi.test(userAgent);
+    const isIos = /(ipad|iphone|ipod)/gi.test(userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
     const isAndroid = /android/gi.test(userAgent);
     const isOperaMini = /opera mini/gi.test(userAgent);
     const isWindowsPhone = /windows phone/gi.test(userAgent);
